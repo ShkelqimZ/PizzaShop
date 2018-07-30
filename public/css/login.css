@@ -1,0 +1,34 @@
+html,body {
+    height: 100%;
+    
+}
+.login_div{
+    background: url("http://pixel-mafia.com/demo/html-templates/vincent/img/slide_1.jpg") repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    /* position: relative; */
+}
+.login_div .container{
+    padding-top: 20%;
+}
+.login_div .container .panel{
+    padding: 40px;
+    background-color: rgba(18, 22, 24, 0.6);
+    color: white;
+    font-size: 14px;
+    border: none;
+}
+.login_div .container input{
+    font-size: 14px;
+}
+.login_div .container button{
+    font-size: 14px;
+    background-color: #c7a802;
+    border: none;
+}
+.login_div .container button:hover{
+    background-color: #c79802;
+}
