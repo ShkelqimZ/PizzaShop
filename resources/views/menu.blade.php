@@ -15,6 +15,9 @@
                             </div>
                             <a href="/menu/{{$product->product_id}}">
                                 <div class="cover" id="coverDiv-{{$product->product_id}}">
+                                    @if(Auth::check() && Auth::user()->type == 'admin')
+                                    <a href="/editProduct/{{$product->product_id}}"><i class="fa fa-edit"></a></i>
+                                    @endif
                                     <i class="fa fa-shopping-basket"></i>
                                 </div>
                             </a>

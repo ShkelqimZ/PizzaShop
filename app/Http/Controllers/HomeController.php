@@ -40,4 +40,9 @@ class HomeController extends Controller
         $product = $products_controller->getProductDetails($product_id);
         return view("product",['product'=>$product]);
     }
+    public function editProduct($product_id){
+        $products_controller = new ProductsController();
+        $product = $products_controller->getProductDetails($product_id);
+        return view("editProduct",['product'=>$product]);
+    }
 }

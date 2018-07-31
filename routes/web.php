@@ -19,6 +19,8 @@ Route::get('/menu/{product_id}','HomeController@product');
 Route::get('/test','ProductsController@hotSalesProducts');
 Route::get('/product','HomeController@addProduct')->name('product');
 Route::post('addNewProduct','ProductsController@addProduct');
+Route::get('editProduct/{product_id}','HomeController@editProduct');
+Route::post('updateProduct','ProductsController@editProduct');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');

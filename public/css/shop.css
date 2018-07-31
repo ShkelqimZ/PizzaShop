@@ -184,13 +184,22 @@ body{
     width: 100%;
     display: none;
 }
-.menu .cover i{
+.menu .cover .fa-shopping-basket{
     font-size: 50px;
     color: black;
     line-height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu .cover .fa-edit{
+    font-size: 25px;
+    color: black;
+    line-height: 100%;
+    position: absolute;
+    top: 20px;
+    right: 0;
     transform: translate(-50%, -50%);
 }
 .menu .thumbnail .productDesc{
@@ -202,25 +211,25 @@ body{
 
 
 
-.addProduct{
+.addProduct,.editProduct{
     background-color: #121618;
     padding-top:50px;
     padding-bottom:50px;
     font-size: 14px;
 }
-.addProduct .container .row .text-center{
+.addProduct .container .row .text-center, .editProduct .container .row .text-center{
     padding: 20px;
     background-color: white;
 }
-.addProduct .container .row .form-control{
+.addProduct .container .row .form-control,.editProduct .container .row .form-control{
     font-size: 14px;
 }
-.addProduct .container .row .button{
+.addProduct .container .row .button, .editProduct .container .row .button{
     font-size: 14px;
     background-color: #c7a802;
     color: white;
 }
-.addProduct .container .row .button:hover{
+.addProduct .container .row .button:hover, .editProduct .container .row .button:hover{
     font-size: 14px;
     background-color: #c79802;
     color: white;

@@ -55,6 +55,43 @@ class ProductsController extends Controller
         return $product;
     }
 
+    public function editProduct(Request $request){
+        $product_id = $request->input('product_id');
+        if($request->hasFile('product_image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('product_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('product_image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('product_image')->storeAs('public/images', $fileNameToStore);
+        }
+
+        $product = Product::find($product_id);
+        $product->category = $request->input('category');
+        if($request->hasFile('product_image')){
+            $product->image = $fileNameToStore;
+        }
+        $product->title = $request->input('title');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        
+        $product->save();
+        // $product = new Product();
+        // $product -> where('product_id',$request->input("product_id")) -> update([
+        //     "category" => $request->input("category"),
+        //     "image" => $request->input("product_image"),
+        //     "title" => $request->input("title"),
+        //     "description" => $request->input("description"),
+        //     "price" => $request->input("price"),
+        // ]);
+
+        return redirect('/menu');
+    }
+
     public function hotSalesProducts(){
         $product = Product::orderBy('price')->take(6)->get();
         return $product;
