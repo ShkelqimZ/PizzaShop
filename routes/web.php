@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\checkAdmin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@
 Route::get('/menu','HomeController@menu')->name('menu');
 Route::get('/menu/{product_id}','HomeController@product');
 Route::get('/test','ProductsController@hotSalesProducts');
-Route::get('/product','HomeController@addProduct')->name('product');
+Route::get('/product','HomeController@addProduct')->middleware([checkAdmin::class]);
 Route::post('addNewProduct','ProductsController@addProduct');
 Route::get('editProduct/{product_id}','HomeController@editProduct');
 Route::post('updateProduct','ProductsController@editProduct');
